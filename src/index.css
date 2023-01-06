@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.form {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 20px;
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 60px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  transition: 0.2s background-color;
+}
+
+.form-input:focus {
+  outline: none;
+  background-color: #eee;
+}
+
+.form-button {
+  background-color: green;
+  color: white;
+  border: none;
+}
