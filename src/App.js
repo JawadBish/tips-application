@@ -10,14 +10,22 @@ function App() {
 
 
   function calculateTip(billAmount, serviceRating) {
-    if (serviceRating < 5) {
+    if (serviceRating < 2) {
       return billAmount * 0.08;
-    } else if (serviceRating < 8) {
+    } else if (serviceRating < 4) {
       return billAmount * 0.10;
     } else {
       return billAmount * 0.15;
     }
   }
+
+  const ratingEmoji = {
+    0: String.fromCodePoint(...[...Array(1)].map(() => 0x1F620)),
+    1: String.fromCodePoint(...[...Array(1)].map(() => 0x1F61E)),
+    2: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44D)),
+    3: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44C)),
+    4: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44F)),
+  };
 
   
   function handleSubmit(event) {
@@ -30,7 +38,7 @@ function App() {
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-row">
           <label className="form-label" htmlFor="bill-amount">
-            Bill amount:
+          <i className="form-icon fas fa-credit-card"></i>Bill amount:
           </label>
           <input
             className="form-input"
@@ -41,19 +49,20 @@ function App() {
           />
         </div>
         <div className="form-row">
-          <label className="form-label" htmlFor="service-rating">
-            Service rating (1-10):
-          </label>
+        <span className="form-label">Service rating:</span>
+      {Object.keys(ratingEmoji).map(rating => (
+        <label key={rating}>
           <input
-            className="form-input"
-            id="service-rating"
-            type="number"
-            min="1"
-            max="10"
-            value={serviceRating}
+            type="radio"
+            name="service-rating"
+            value={rating}
+            checked={serviceRating === rating}
             onChange={event => setServiceRating(event.target.value)}
           />
-        </div>
+          {ratingEmoji[rating]}
+        </label>
+      ))}
+    </div>
         <button className="form-button" type="submit">
           Calculate tip
         </button>

@@ -15,7 +15,7 @@ code {
   display: grid;
   grid-template-columns: 150px 1fr;
   grid-gap: 20px;
-  background-color: lightblue;
+  background-color: rgb(140, 226, 132);
   padding: 20px;
 }
 
