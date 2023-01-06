@@ -48,3 +48,23 @@ code {
   color: white;
   border: none;
 }
+
+
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-label {
+    margin-bottom: 10px;
+  }
+  .form-input {
+    width: 100%;
+  }
+  .form-button {
+    width: 100%;
+  }
+}
