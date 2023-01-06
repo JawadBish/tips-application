@@ -11,20 +11,28 @@ function App() {
 
   function calculateTip(billAmount, serviceRating) {
     if (serviceRating < 2) {
-      return billAmount * 0.08;
-    } else if (serviceRating < 4) {
-      return billAmount * 0.10;
-    } else {
+      return billAmount * 0.1;
+    } 
+    else if (serviceRating < 3) {
+      return billAmount * 0.11;
+    }
+    else if (serviceRating < 4) {
+      return billAmount * 0.12;
+    }
+    else if (serviceRating < 5) {
+      return billAmount * 0.13;
+    }
+     else {
       return billAmount * 0.15;
     }
   }
 
   const ratingEmoji = {
-    0: String.fromCodePoint(...[...Array(1)].map(() => 0x1F620)),
-    1: String.fromCodePoint(...[...Array(1)].map(() => 0x1F61E)),
-    2: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44D)),
-    3: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44C)),
-    4: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44F)),
+    1: String.fromCodePoint(...[...Array(1)].map(() => 0x1F620)),
+    2: String.fromCodePoint(...[...Array(1)].map(() => 0x1F61E)),
+    3: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44D)),
+    4: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44C)),
+    5: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44F)),
   };
 
   
