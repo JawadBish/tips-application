@@ -43,10 +43,24 @@ code {
   background-color: #eee;
 }
 
+
 .form-button {
+  width: 100%;
   background-color: green;
   color: white;
   border: none;
+}
+
+.result {
+  display: flex;
+  justify-content: left;
+}
+
+.form-result{
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: green;
 }
 
 
@@ -62,9 +76,18 @@ code {
     margin-bottom: 10px;
   }
   .form-input {
-    width: 100%;
+    width: 50%;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
   }
   .form-button {
-    width: 100%;
+    width: 50%;
+  }
+  .result {
+    display: flex;
+    justify-content: center;
+
   }
 }

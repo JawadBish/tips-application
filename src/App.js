@@ -10,20 +10,24 @@ function App() {
 
 
   function calculateTip(billAmount, serviceRating) {
+    if (billAmount < 0)  {
+      setBillAmount(0)
+      return '0';
+    }
     if (serviceRating < 2) {
-      return billAmount * 0.1;
+      return (billAmount * 0.1).toFixed(2);
     } 
     else if (serviceRating < 3) {
-      return billAmount * 0.11;
+      return (billAmount * 0.11).toFixed(2);
     }
     else if (serviceRating < 4) {
-      return billAmount * 0.12;
+      return (billAmount * 0.12).toFixed(2);
     }
     else if (serviceRating < 5) {
-      return billAmount * 0.13;
+      return (billAmount * 0.13).toFixed(2);
     }
      else {
-      return billAmount * 0.15;
+      return (billAmount * 0.15).toFixed(2);
     }
   }
 
@@ -71,10 +75,15 @@ function App() {
         </label>
       ))}
     </div>
-        <button className="form-button" type="submit">
+    <div className='button'>
+    <button className="form-button" type="submit">
           Calculate tip
         </button>
+    </div>
+    <br></br>
+    <div className='result'>
         {tipAmount && <p className="form-result">Tip amount: {tipAmount}</p>}
+        </div>
       </form>
     );
 }
