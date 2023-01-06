@@ -15,7 +15,7 @@ function App() {
       return '0';
     }
     if (serviceRating < 2) {
-      return (billAmount * 0.1).toFixed(2);
+      return (billAmount * 0.01).toFixed(2);
     } 
     else if (serviceRating < 3) {
       return (billAmount * 0.11).toFixed(2);
@@ -32,7 +32,7 @@ function App() {
   }
 
   const ratingEmoji = {
-    1: String.fromCodePoint(...[...Array(1)].map(() => 0x1F620)),
+    1: String.fromCodePoint(...[...Array(1)].map(() => 0x1F621)),
     2: String.fromCodePoint(...[...Array(1)].map(() => 0x1F61E)),
     3: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44D)),
     4: String.fromCodePoint(...[...Array(1)].map(() => 0x1F44C)),
